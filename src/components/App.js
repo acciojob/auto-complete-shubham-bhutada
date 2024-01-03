@@ -11,11 +11,15 @@ const App = () => {
         <h1>Search item</h1>
         <input type="text" value={data} onChange={(e)=>setData(e.target.value)}/>
         {
-          data === ""? (fruits.map((item,index) => <li key={index}>{item}</li>)) : 
-            (fruits
-              .filter(item => item.includes(data))
-              .map((item,index) => <li key={index}>{item}</li>)
-            )
+          <ul>
+            {
+              data === ""? (fruits.map((item,index) => <li key={index}>{item}</li>)) : 
+              (fruits
+                .filter(item => item.includes(data))
+                .map((item,index) => <li key={index}>{item}</li>)
+              )
+            }
+          </ul>
         }
                 
     </div>
